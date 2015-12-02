@@ -1,3 +1,8 @@
+# Status
+master: [![Build Status](https://travis-ci.org/ermaker/iptime_rebooter.svg?branch=master)](https://travis-ci.org/ermaker/iptime_rebooter)
+
+develop: [![Build Status](https://travis-ci.org/ermaker/iptime_rebooter.svg?branch=develop)](https://travis-ci.org/ermaker/iptime_rebooter)
+
 # IptimeRebooter
 
 Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/iptime_rebooter`. To experiment with that code, run `bin/console` for an interactive prompt.
