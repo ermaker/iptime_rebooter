@@ -5,11 +5,22 @@ develop: [![Build Status](https://travis-ci.org/ermaker/iptime_rebooter.svg?bran
 
 # IptimeRebooter
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/iptime_rebooter`. To experiment with that code, run `bin/console` for an interactive prompt.
+ipTIME routers are great. But some cheap models are occasionally down.
+My one is also down in 24 ~ 48 hours.
 
-TODO: Delete this and the text above, and describe your gem
+IptimeRebooter will help to reboot your router automatically so you do not need to reboot manually and you can have a rest.
 
-## Installation
+## Usage
+
+### Docker
+
+Just run:
+
+```sh
+$ docker run --rm ermaker/iptime_rebooter # Reboot your router right now
+```
+
+### Gem
 
 Add this line to your application's Gemfile:
 
@@ -19,15 +30,31 @@ gem 'iptime_rebooter'
 
 And then execute:
 
-    $ bundle
+```sh
+$ bundle
+```
 
 Or install it yourself as:
 
-    $ gem install iptime_rebooter
+```sh
+$ gem install iptime_rebooter
+```
 
-## Usage
+Write this into your code:
 
-TODO: Write usage instructions here
+```ruby
+require 'iptime_rebooter/rebooter'
+
+# ...
+
+IptimeRebooter::Rebooter.new.reboot # Reboot your router right now
+```
+
+Or run on command line:
+
+```sh
+$ bundle exec rake reboot # Reboot your router right now
+```
 
 ## Development
 
@@ -37,7 +64,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/iptime_rebooter.
+Bug reports and pull requests are welcome on GitHub at https://github.com/ermaker/iptime_rebooter.
 
 
 ## License
