@@ -13,3 +13,9 @@ namespace :rubocop do
     sh 'rubocop --auto-gen-config'
   end
 end
+
+desc 'Reboot iptime'
+task :reboot do
+  require 'iptime_rebooter/rebooter'
+  IptimeRebooter::Rebooter.new.reboot
+end
