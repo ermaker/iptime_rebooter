@@ -1,0 +1,125 @@
+<HTML><HEAD><TITLE>EFM Networks ipTIME N104+</TITLE>
+<script>
+
+//login_navi
+function login_session()
+{
+	// Check ID Password 
+
+	// Check captcha if exist
+	//location.href = "../testbin/login.cgi";
+	//
+	document.form.submit();
+}
+
+</script>
+<SCRIPT type="text/javascript">
+<!--
+function LoginProcess()
+		{
+			if(document.form.captcha_on.value == '1')				document.form.captcha_file.value=iframe_captcha.document.captcha_form.captcha_file.value;
+			document.form.submit();
+		}
+function ChangeCaptchaUse(flag)
+        {
+                if(flag==0)
+                {
+                        with(document)
+                        {
+                                getElementById("captchatr1").style.display = "none";
+                                getElementById("captchatr2").style.display = "none";
+                                getElementById("captchatr3").style.display = "none";
+                        }
+                }
+                else
+                        ChangeCaptchaInputBg();
+        }
+function ChangeCaptchaInputBg(flag)
+        {
+                if(flag=="clear")
+                        document.form.captcha_code.style.cssText="background-image:url();width:255px; height:21px;";
+                else
+                        document.form.captcha_code.style.cssText="background-image:url(/images2/login_str_captcha_bg.kr.gif);width:255px; height:21px;";
+        }
+function FocusPassword()
+	{
+        var F = document.form;
+        if(F.passwd.value == F.default_passwd.value)
+        {
+		document.getElementById("passwd_td").innerHTML = '<input type=password name=passwd CLASS=login_input TABINDEX=2>';
+                document.form.passwd.value = '';
+                document.form.passwd.style.color = "#000000";
+                document.form.passwd.focus();
+        }
+	}
+function RenewCaptchaImage()
+        {
+                document.getElementById("iframe_captcha").contentWindow.location.href="/sess-bin/captcha.cgi";
+        }
+	//-->
+	</SCRIPT>
+<STYLE>
+.item_text { font: normal normal normal 12px arial; color:#000000; }
+
+table,td { font: normal normal normal 12px arial; color:#000000; }
+body
+{
+        scrollbar-face-color:#FFFFFF;
+        scrollbar-highlight-color: #aaaaaa;
+        scrollbar-3dlight-color: #FFFFFF;
+        scrollbar-shadow-color: #aaaaaa;
+        scrollbar-darkshadow-color: #FFFFFF;
+        scrollbar-track-color: #FFFFFF;
+        scrollbar-arrow-color: #aaaaaa;
+        font: normal normal normal 12px arial;
+}
+
+/*modification*/
+.login_info_td {height:49; padding:0px 17px 0px 0px; border-collapse:collapse;}
+
+/*new*/
+.login_input { font: normal normal normal 12px arial; color:#000000; border:#C6C9CC 1px solid; width:181px; height:21px;}
+
+
+</STYLE>
+
+
+</HEAD>
+<BODY >
+<FORM NAME="form" METHOD="post" ACTION="/sess-bin/login_handler.cgi">
+<INPUT TYPE=hidden NAME="init_status" value=1>
+<INPUT TYPE=hidden NAME="captcha_on" value=0>
+<INPUT TYPE=hidden NAME="captcha_file">
+<TABLE CELLPADDING=0 CELLSPACING=0 CLASS=navi_login_table ALIGN=CENTER border=0>
+<TR><TD><IMG SRC="/images2/login_title.n104p.gif" BORDER=0></TD></TR>
+<TR><TD BACKGROUND="/images2/login_main_bg.gif" STYLE="vertical-align:top;padding:0 0 0 3px;">
+<TABLE CELLPADDING=0 CELLSPACING=0 WIDTH=258 ALIGN=CENTER>
+<TR><TD COLSPAN=2 HEIGHT=10></TD></TR>
+<TR><TD WIDTH=70 STYLE="padding:0 0 0 1px;"><IMG SRC="/images2/login_str_id.kr.gif" BORDER=0></TD>
+<TD><INPUT type=text name=username CLASS=login_input TABINDEX=1 value="" onkeydown="if (event.keyCode == 13) LoginProcess();"></TD></TR>
+<TR><TD COLSPAN=2 HEIGHT=3></TD></TR>
+<TR><TD WIDTH=70 STYLE="padding:0 0 0 1px;"><IMG SRC="/images2/login_str_passwd.kr.gif" BORDER=0></TD>
+<TD ID='passwd_td'><INPUT type=password name=passwd CLASS=login_input TABINDEX=2 onfocus="FocusPassword();" value="" style="color:#000000" onkeydown="if (event.keyCode == 13) LoginProcess();"></TD></TR>
+<input type=hidden name="default_passwd" value="초기암호:admin(변경필요)"><TR><TD COLSPAN=2 HEIGHT=8></TD></TR>
+<TR ID=captchatr1><TD COLSPAN=2><INPUT type=text name=captcha_code CLASS=login_input STYLE="width:255px; height:21px;" ONFOCUS="ChangeCaptchaInputBg('clear');" TABINDEX=3 onkeydown="if (event.keyCode == 13) LoginProcess();"></TD></TR>
+<TR ID=captchatr2><TD COLSPAN=2 HEIGHT=5></TD></TR>
+<TR ID=captchatr3><TD COLSPAN=2 HEIGHT=72>
+<TABLE CELLPADDING=0 CELLSPACING=0 HEIGHT=72 CLASS="login_input">
+</TABLE></TD></TR>
+<TR><TD COLSPAN=2 HEIGHT=12></TD></TR>
+<TR><TD COLSPAN=2 HEIGHT=50><IMG style="cursor:pointer" SRC="/images2/login_bt.kr.gif" TABINDEX=4 ID="submit_bt" onclick="LoginProcess();"  ></TD></TR>
+<TR><TD COLSPAN=2 HEIGHT=10></TD></TR>
+</TABLE></TD></TR>
+<TR><TD HEIGHT=10 BACKGROUND="/images2/login_sess_back_info.gif"></TD></TR></TABLE>
+</FORM>
+</BODY>
+<SCRIPT type="text/javascript">
+<!--
+with(document)
+{
+ChangeCaptchaUse(form.captcha_on.value);
+form.username.focus();
+}
+//-->
+</SCRIPT>
+</HTML>
