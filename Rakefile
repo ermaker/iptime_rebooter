@@ -24,3 +24,8 @@ task :reboot do
   require 'iptime_rebooter/rebooter'
   IptimeRebooter::Rebooter.new.reboot
 end
+
+desc 'Setup PhantomJS'
+task :setup do
+  require 'phantomjs/poltergeist'
+end
