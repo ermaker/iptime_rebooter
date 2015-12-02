@@ -1,1 +1,12 @@
 inherit_from: .rubocop_todo.yml
+
+Metrics/LineLength:
+  Exclude:
+    - 'iptime_rebooter.gemspec'
+
+Style/Documentation:
+  Exclude:
+    - 'spec/**/*'
+    - 'test/**/*'
+    - 'lib/iptime_rebooter.rb'
+    - 'lib/iptime_rebooter/version.rb'
