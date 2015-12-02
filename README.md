@@ -14,10 +14,23 @@ IptimeRebooter will help to reboot your router automatically so you do not need 
 
 ### Docker
 
-Just run:
+Just run with environment:
 
 ```sh
-$ docker run --rm ermaker/iptime_rebooter # Reboot your router right now
+$ docker run --rm -e USERNAME=[YOUR_USERNAME] -e PASSWORD=[YOUR_PASSWORD] ermaker/iptime_rebooter # Reboot your router right now
+```
+
+Or with an env file:
+
+```sh
+$ docker run --rm --env-file=.env ermaker/iptime_rebooter # Reboot your router right now
+```
+
+.env:
+
+```
+USERNAME=[YOUR_USERNAME]
+PASSWORD=[YOUR_PASSWORD]
 ```
 
 ### Gem
@@ -47,12 +60,17 @@ require 'iptime_rebooter/rebooter'
 
 # ...
 
+ENV['USERNAME']='[YOUR_USERNAME]'
+ENV['PASSWORD']='[YOUR_PASSWORD]'
+
 IptimeRebooter::Rebooter.new.reboot # Reboot your router right now
 ```
 
 Or run on command line:
 
 ```sh
+$ export USERNAME=[YOUR_USERNAME]
+$ export PASSWORD=[YOUR_PASSWORD]
 $ bundle exec rake reboot # Reboot your router right now
 ```
 
