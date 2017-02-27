@@ -14,7 +14,7 @@ module IptimeRebooter
     end
 
     def base
-      'http://192.168.0.1'
+      ENV['ROUTER_URL'] || 'http://192.168.0.1'
     end
 
     def new_session
