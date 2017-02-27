@@ -5,6 +5,7 @@ PATH
       capybara
       phantomjs
       poltergeist
+      rake
 
 GEM
   remote: https://rubygems.org/
@@ -131,7 +132,6 @@ DEPENDENCIES
   guard-rubocop
   iptime_rebooter!
   pry
-  rake
   rspec
   rubocop
   sinatra
